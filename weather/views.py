@@ -17,7 +17,7 @@ def index(request):
         r = requests.get(url.format(city)).json()
 
         city_weather = {
-            'city' : city,
+            'city' : city.name,
             'temperature' : r['main']['temp'],
             'description' : r['weather'][0]['description'],
             'icon' : r['weather'][0]['icon'],
@@ -28,5 +28,5 @@ def index(request):
 
 
     print(weather_data)
-    context = {'city_weather': city_weather}
+    context = {'weather_data': weather_data}
     return render(request, 'weather/weather.html', context)
