@@ -19,4 +19,4 @@ def index(request):
 
     print(city_weather)
     context = {'city_weather': city_weather}
-    return render(request, 'weather/weather.html')
+    return render(request, 'weather/weather.html', context)
